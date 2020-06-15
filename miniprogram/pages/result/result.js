@@ -37,6 +37,13 @@ Page({
     }
   })
   },
+  onItemClick: function(e){
+    console.log(e)
+    app.globalData.item = this.data.resultList[e.currentTarget.dataset.index]
+    wx.navigateTo({
+      url: '/pages/item/item',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

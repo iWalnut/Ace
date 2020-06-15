@@ -4,11 +4,11 @@
     <input class="searchInput" value='{{keyWord}}' bindconfirm='goSearch'	/>
   </view>
   <view>
-    <block class="list" wx:for="{{resultList}}" wx:for-item="item">
-        <view class="card" bindtap="onItemClick">
-            <view class="title"><image src='title.png'/>{{item.title}}</view>
-            <view class="date"><image src='date.png'/>{{item.beginDate}} - {{item.endDate}}</view>
-            <view class="region"><image src='region.png'/>{{item.region}}</view>
+    <block class="list">
+        <view class="card" wx:for="{{resultList}}" data-index="{{index}}" wx:for-item="item" bindtap="onItemClick">
+          <view class="title"><image src='title.png'/>{{item.title}}</view>
+          <view class="date"><image src='date.png'/>{{item.beginDate}} - {{item.endDate}}</view>
+          <view class="region"><image src='region.png'/>{{item.region}}</view>
         </view>
     </block>
   </view>
