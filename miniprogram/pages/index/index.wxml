@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+  <view>
+    <image wx:if="{{!hasUserInfo && canIUse}}" class="icon" src="./icon.png" mode="cover"></image>
+  </view>
+
+  <!-- 用户信息 -->
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <view class="button">
+    <button class="button" wx:if="{{hasUserInfo}}" bindtap="goHome"> 开始使用 </button>
+  </view>
+
+</view>

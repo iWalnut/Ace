@@ -1,0 +1,64 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  margin-left: 200rpx;
+  align-items: center;
+}
+
+.section{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5%;
+  padding: 10rpx 0;
+}
+
+.activity_title{
+  border:1px solid rgb(138, 138, 156);
+  margin-left: 20rpx;
+}
+
+.intro{
+  white-space:nowrap;
+}
+.activity_intro{
+  border:1px solid rgb(138, 138, 156);
+  margin-left: 20rpx;
+  margin-right: 30%;
+}
+
+.begin{
+  border:1px solid rgb(138, 138, 156);
+  margin-left: 20rpx;
+}
+
+.end{
+  border:1px solid rgb(138, 138, 156);
+  margin-left: 20rpx;
+}
+
+.area{
+  border:1px solid rgb(138, 138, 156);
+  margin-left: 20rpx;
+}
+
+.upload{
+  border:1px solid rgb(138, 138, 156);
+  margin-left: 20rpx;
+}
+.btn-group{
+  display: flex;
+  flex-direction: row;
+  padding: 50rpx 0;
+  margin-right: 200rpx;
+}
+
+.submit{
+  background-color: white;
+  color:rgb(65, 141, 202);
+}
+
+.reset{
+  background-color: white;
+  color: #aaa;
+}

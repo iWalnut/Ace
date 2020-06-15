@@ -1,0 +1,47 @@
+.searchInput{
+  border:1px solid grey;
+  margin-left: 20rpx;
+}
+.list{
+  padding: 100rpx 0;
+}
+
+.card {
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 4px 1px 1px #cccccc;
+  margin: 20px;
+  position: relative;
+}
+
+image{
+  width:50rpx;
+  height: 50rpx;
+}
+
+.time {
+  float: right;
+  margin-top: 170px;
+  color: #ffffff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  font-size: 12px;
+}
+
+button[plain]
+{ 
+  border:0;
+  width: 200px;
+  position:fixed;
+  bottom:0;
+}
+
+.img{
+ margin: 0;
+ width:100rpx;
+ height: 100rpx;
+ border: none;
+}

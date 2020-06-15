@@ -1,0 +1,9 @@
+<!--item.wxml-->
+<view class="container">
+  <view class="card" bindtap="onItemClick">
+    <view class="title"><image src='title.png'/>{{item.title}}</view>
+    <view class="date"><image src='date.png'/>{{item.beginDate}} - {{item.endDate}}</view>
+    <view class="region"><image src='region.png'/>{{item.region}}</view>
+    <view class="intro"><image src='intro.png'/>{{item.intro}}</view>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+<!--home.wxml-->
+<view class="container">
+  <view class="search">
+    <input class="searchInput" value='{{keyWord}}' bindconfirm='goSearch'	/>
+  </view>
+  <view>
+    <block class="list" >
+        <view class="card" wx:for="{{list}}" data-index="{{index}}" wx:for-item="item" bindtap="onItemClick">
+            <view class="title"><image src='title.png'/>{{item.title}}</view>
+            <view class="date"><image src='date.png'/>{{item.beginDate}} - {{item.endDate}}</view>
+            <view class="region"><image src='region.png'/>{{item.region}}</view>
+        </view>
+    </block>
+  </view>
+  <view class="top">
+    <button bindtap="newActivity" plain="true"><image src='new.png' class="img"></image></button>
+  </view>
+</view>
