@@ -1,5 +1,12 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
 .list{
-  padding: 50rpx 0;
+  padding: 200rpx 0;
 }
 
 .card {
@@ -7,8 +14,9 @@
   border-radius: 5px;
   background-color: #ffffff;
   box-shadow: 4px 1px 1px #cccccc;
-  margin: 20rpx;
+  margin-top: 20rpx;
   position: relative;
+  top: 80rpx;
 }
 
 image{
@@ -26,3 +34,19 @@ image{
   z-index: 1;
   font-size: 12px;
 }
+
+button[plain]
+{ 
+  border:0;
+  width: 200px;
+  position:fixed;
+  bottom:0;
+}
+
+.img{
+ margin: 0;
+ width:100rpx;
+ height: 100rpx;
+ border: none;
+}
+

@@ -3,12 +3,12 @@
 <form bindsubmit='getForm' bindreset="formReset" class="newForm">
   <view class="section">
     <view>活动主题</view>
-    <input class="activity_title" name="title" placeholder="主题最多十个字" maxlength="10"	/>
+    <input class="activity_title" value="{{title}}" placeholder="主题最多十个字" maxlength="10"	/>
   </view>
 
   <view class="section">
   <view class="intro">活动说明</view>
-  <input  name="intro" class="activity_intro" auto-height placeholder="活动说明" />
+  <input  value="{{intro}}" class="activity_intro" auto-height placeholder="活动说明" />
   </view>
 
   <view class="section">
@@ -48,7 +48,6 @@
 
   <view class="btn-group">
     <button style="width:200rpx" formType="submit" class="submit">提交</button>
-    <button style="width:200rpx" formType="reset" class="reset">重置</button>
   </view>
 </form>
 </view>

@@ -1,12 +1,17 @@
-.searchInput{
-  border:1px solid grey;
-  margin-left: 20rpx;
-}
+
 .list{
   padding: 100rpx 0;
 }
 
-button[plain]
+.edit
+{ 
+  border:0;
+  width: 50px;
+  position:fixed;
+  bottom:100rpx;
+}
+
+.delete
 { 
   border:0;
   width: 50px;
@@ -14,10 +19,17 @@ button[plain]
   top:60rpx;
 }
 
+button[plain]
+{ 
+  border:0;
+  width: 50px;
+  position:fixed;
+}
+
 .img{
  margin: 0;
- width:100rpx;
- height: 100rpx;
+ width:600rpx;
+ height: 600rpx;
  border: none;
 }
 
@@ -36,6 +48,7 @@ button[plain]
   align-items: center;
   margin-top: 5%;
   padding: 10rpx 0;
+  top: 0;
 }
 
 .userInfo{
@@ -49,30 +62,4 @@ button[plain]
 image{
   width:50rpx;
   height: 50rpx;
-}
-
-.time {
-  float: right;
-  margin-top: 170px;
-  color: #ffffff;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1;
-  font-size: 12px;
-}
-
-button[plain]
-{ 
-  border:0;
-  width: 200px;
-  position:fixed;
-  bottom:0;
-}
-
-.img{
- margin: 0;
- width:600rpx;
- height: 600rpx;
- border: none;
 }

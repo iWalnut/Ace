@@ -8,8 +8,8 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    title: '',
-    intro: '',
+    title: '2333',
+    intro: '23333',
     region: ['北京市', '北京市', '海淀区'],
     beginDate: '2020-06-15',
     endDate: '2020-06-15',
@@ -19,6 +19,14 @@ Page({
 
   onLoad: function() {
     wx.setNavigationBarTitle({ title: '发起活动' })
+    this.setData({
+      title: app.globalData.item.title,
+      intro: app.globalData.item.intro,
+      region: app.globalData.item.region,
+      beginDate: app.globalData.item.beginDate,
+      endDate: app.globalData.item.endDate,
+      fileId: app.globalData.item.fileId
+    })
   },
 
   bindRegionChange: function (e) {
@@ -105,7 +113,8 @@ Page({
     if(this.data.beginDate>=curDate){
       const db = wx.cloud.database()
       console.log("开始")
-      db.collection("activity").add({
+      db.collection("activity").doc(app.globalData.item._id)
+      .update({
         data:{
           // 操作云数据库时openId会自动添加
           title:this.data.title,
@@ -118,34 +127,11 @@ Page({
       }).then(res=>{
         console.log("添加至数据库成功",res)
         wx.switchTab({
-          url: '/pages/home/home',
+          url: '/pages/myItem/myItem',
         })
       }).catch(res=>{
         console.log("添加至数据库失败",res)
       })   
     }
-  },
-  //表单重置
-  formReset: function(){
-    let that = this
-      wx.showModal({
-        title: '提示',
-        content: '确定要重置吗？',
-        success: function (sm) {
-          if (sm.confirm) {
-            // 用户点击了确定 可以调用删除方法了
-            that.setData({
-              title:'',
-              intro:'',
-              region: ['北京市', '北京市', '海淀区'],
-              beginDate: '2020-06-15',
-              endDate: '2020-06-15',
-              fileId: null,
-            })
-          } else if (sm.cancel) {
-            console.log('用户点击取消')
-          }
-        }
-      })
-    }    
+  }
 })

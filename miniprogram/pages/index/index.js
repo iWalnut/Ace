@@ -9,7 +9,8 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    dbUser: null
   },
 
   onLoad: function() {
@@ -90,8 +91,59 @@ Page({
     }
   },
   goHome:function(){
-    wx.switchTab({
-      url: '/pages/home/home',
-    })
-  }
+    let that = this
+    const db = wx.cloud.database()
+    db.collection('user').where({
+      _openid:app.globalData.openId
+    }).get({
+      success(res) {
+        that.setData({
+          dbUser: res.data
+        })
+        console.log(that.data.dbUser)
+        if(that.data.dbUser !=''){
+          let id = that.data.dbUser[0]._id
+          db.collection('user').doc(id)
+          .update({
+            // 想要更新的数据
+            data: {
+              nickname:that.data.userInfo.nickName,
+              avatarUrl: that.data.userInfo.avatarUrl,
+              gender: that.data.userInfo.gender,
+              country: that.data.userInfo.country,
+            }
+          }).then(res => {
+            wx.switchTab({
+              url: '/pages/home/home',
+            })
+          }).catch(err => {
+            // 更新数据失败
+            console.log(err)
+          })
+        }
+        else{
+          console.log('add')
+          db.collection("user").add({
+            data:{
+              // 操作云数据库时openId会自动添加
+              nickname:that.data.userInfo.nickName,
+              avatarUrl: that.data.userInfo.avatarUrl,
+              gender: that.data.userInfo.gender,
+              country: that.data.userInfo.country,
+              tag: 'Ace'
+              }
+            }).then(res=>{
+              wx.switchTab({
+                url: '/pages/home/home',
+              })
+            }).catch(res=>{
+              console.log("添加至数据库失败",res)
+            })
+        }
+    },
+    fail: err => {
+      console.log('失败')
+    }})
+    
+}
 })

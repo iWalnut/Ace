@@ -1,4 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-
+<text>
+程序员正在努力实现中
+</text>
 </view>

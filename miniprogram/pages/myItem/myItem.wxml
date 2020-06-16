@@ -5,10 +5,9 @@
       <view class="title">
         <image src='title.png'/><h1>{{item.title}}</h1>
       </view>
-      <view class="follow">
+      <view class="action">
         <button  plain="true">
-        <image wx:if="{{!state}}" src='follow.png' bindtap="follow"></image>
-        <image wx:else src='unfollow.png' bindtap="unfollow"></image>
+        <image src='delete.png' bindtap="delete"></image>
         </button>
       </view>
     </view>
@@ -20,5 +19,9 @@
     <view class="region"><image src='region.png'/>{{item.region}}</view>
     <view class="intro"><image src='intro.png'/>{{item.intro}}</view>
     <view class="img"><image src = "{{item.fileId}}" class="img"></image></view>
+  </view>
+
+  <view class="bottom">
+    <button bindtap="edit" plain="true" class="edit"><image src='edit.png'></image></button>
   </view>
 </view>

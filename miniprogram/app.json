@@ -2,10 +2,15 @@
   "pages": [
     "pages/index/index",
     "pages/home/home",
+    "pages/item/item",
     "pages/like/like",
+    "pages/myProj/myProj",
+    "pages/myItem/myItem",
     "pages/message/message",
     "pages/setting/setting",
-    "pages/new/new"
+    "pages/new/new",
+    "pages/editItem/editItem",
+    "pages/result/result"
   ],
   "tabBar": {
     "position": "bottom",

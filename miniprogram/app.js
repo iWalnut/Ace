@@ -14,7 +14,8 @@ App({
       userInfo: null,
       openId: null,
       resultList: [],
-      item: {} 
+      item: {} ,
+      isLogin: false
     }
   }
 })
